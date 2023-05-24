@@ -2,13 +2,13 @@
 #include <stdbool.h>
 
 int main() {
-    // Déclaration des variables
+   
     int choix;
-    int joueurX = 0, joueurY = 0; // Coordonnées du joueur
-    int tresorX = 3, tresorY = 2; // Coordonnées du trésor
+    int joueurX = 0, joueurY = 0; 
+    int tresorX = 3, tresorY = 2; 
     bool tresorTrouve = false;
     
-    // Tableau pour stocker les objets trouvés
+
     char objetsTrouves[5][20] = {
         "Épée",
         "Armure",
@@ -17,19 +17,19 @@ int main() {
         ""
     };
 
-    // Boucle principale du jeu
+    
     while (!tresorTrouve) {
-        // Affichage des informations
+        
         printf("Vous êtes aux coordonnées (%d, %d).\n", joueurX, joueurY);
         
-        // Vérification si le trésor est trouvé
+       
         if (joueurX == tresorX && joueurY == tresorY) {
             printf("Vous avez trouvé le trésor !\n");
             tresorTrouve = true;
             break;
         }
         
-        // Demande d'action au joueur
+        
         printf("Que voulez-vous faire ?\n");
         printf("1. Aller vers le nord\n");
         printf("2. Aller vers l'est\n");
@@ -38,7 +38,7 @@ int main() {
         printf("Votre choix : ");
         scanf("%d", &choix);
         
-        // Déplacement du joueur en fonction du choix
+        
         switch (choix) {
             case 1:
                 joueurY++;
@@ -57,7 +57,7 @@ int main() {
         }
     }
     
-    // Affichage des objets trouvés
+    
     printf("Objets trouvés :\n");
     for (int i = 0; i < 5; i++) {
         if (objetsTrouves[i][0] != '\0') {
